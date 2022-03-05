@@ -181,6 +181,37 @@ public:
 
             delete temptr;
         }
+    }void delete_data(int x)
+    {
+        Node *ptr, *temptr;
+        ptr = start;
+     
+        if (ptr == NULL)
+        {
+            cout << "NO data available";
+        }
+        else if (ptr->data == x)
+        {
+            start = ptr->next;
+            cout<<"yeha aayo hai! "<<endl;
+            delete ptr;
+        }        
+    
+        else
+        {
+            while (ptr->data != x)
+            {
+                temptr=ptr;
+                ptr = ptr->next;
+         
+            }
+             temptr->next=ptr->next;
+          
+           
+            cout << "Data deleted : " << x << " is: " << ptr->data << endl;
+
+            delete ptr;
+        }
     }
     void display()
     {
@@ -211,5 +242,7 @@ int main()
 
     l.delete_after_specific(0);
     l.display();
+    l.delete_data(3);
+     l.display();
     return 0;
 }
