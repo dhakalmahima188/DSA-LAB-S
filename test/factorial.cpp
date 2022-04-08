@@ -16,13 +16,13 @@ int non_tail(int n)
         return n;
         else{
             
-            return non_tail(n-1)+non_tail(n-2);
+            return n*non_tail(n-1);
             }
    
 }
 
 int main()
 {
-   cout<< "Tail "<<tail(5);
+   cout<< "Tail "<<tail(5)<<endl;
    cout<< "Non tail "<<non_tail(5);
 }
